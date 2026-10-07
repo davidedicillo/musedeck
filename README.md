@@ -2,8 +2,6 @@
 
 A local Stream Deck plugin for the installed Meta Muse Mac app (`com.meta.endo`). It uses Muse's visible Mac controls and the signed-in app. It does not use a Meta API key or read conversation history. This independent plugin is not affiliated with Meta.
 
-![Muse Controls](marketplace-media/thumbnail.png)
-
 **Download:** [com.davidedicillo.muse.streamDeckPlugin](dist/com.davidedicillo.muse.streamDeckPlugin) (v0.4.0.0), then double-click to install.
 
 **Support:** [SUPPORT.md](SUPPORT.md) · **Privacy:** [PRIVACY.md](PRIVACY.md) · **Issues:** use the Issues tab on this repository.
