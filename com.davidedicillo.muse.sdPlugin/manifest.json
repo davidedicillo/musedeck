@@ -1,0 +1,107 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "com.davidedicillo.muse",
+  "Name": "Muse Controls",
+  "Version": "0.4.0.0",
+  "Author": "David DiCillo",
+  "Description": "Control the Meta Muse Mac app with Stream Deck keys",
+  "Category": "Muse Controls",
+  "CategoryIcon": "imgs/plugin/category-icon",
+  "Icon": "imgs/plugin/marketplace",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 3,
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "12"
+    }
+  ],
+  "Nodejs": {
+    "Version": "24"
+  },
+  "Actions": [
+    {
+      "UUID": "com.davidedicillo.muse.open",
+      "Name": "Open Muse",
+      "Tooltip": "Open Muse and show Main chat.",
+      "Icon": "imgs/actions/open/icon",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/actions/open/key",
+          "TitleAlignment": "middle"
+        }
+      ]
+    },
+    {
+      "UUID": "com.davidedicillo.muse.side-chat",
+      "Name": "New Side Chat",
+      "Tooltip": "Start a new Muse side chat.",
+      "Icon": "imgs/actions/side-chat/icon",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/actions/side-chat/key",
+          "TitleAlignment": "middle"
+        }
+      ]
+    },
+    {
+      "UUID": "com.davidedicillo.muse.dictate",
+      "Name": "Dictate",
+      "Tooltip": "Dictate in the current Muse chat or Main chat when Muse is not focused.",
+      "Icon": "imgs/actions/dictate/icon",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/actions/dictate/key",
+          "TitleAlignment": "middle"
+        },
+        {
+          "Image": "imgs/actions/dictate-stop/key",
+          "TitleAlignment": "middle"
+        }
+      ]
+    },
+    {
+      "UUID": "com.davidedicillo.muse.finish-send",
+      "Name": "Finish & Send",
+      "Tooltip": "Finish Muse dictation and send, or send the current draft.",
+      "Icon": "imgs/actions/finish-send/icon",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/actions/finish-send/key",
+          "TitleAlignment": "middle"
+        }
+      ]
+    },
+    {
+      "UUID": "com.davidedicillo.muse.send-prompt",
+      "Name": "Send Saved Prompt",
+      "Tooltip": "Send this key's saved prompt to the visible Muse chat.",
+      "Icon": "imgs/actions/send-prompt/icon",
+      "PropertyInspectorPath": "ui/send-prompt.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/actions/send-prompt/key",
+          "TitleAlignment": "middle"
+        }
+      ]
+    }
+  ]
+}

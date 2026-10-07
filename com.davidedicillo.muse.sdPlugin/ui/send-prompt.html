@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saved Muse prompt</title>
+  <style>
+    :root { color-scheme: dark; font: 13px -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { margin: 16px; color: #eee; background: #242424; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; }
+    textarea { box-sizing: border-box; width: 100%; min-height: 120px; padding: 9px; resize: vertical;
+      border: 1px solid #666; border-radius: 5px; background: #333; color: #fff; font: inherit; }
+    textarea:focus { outline: 2px solid #8b9eff; border-color: transparent; }
+    p { line-height: 1.45; color: #bbb; }
+  </style>
+</head>
+<body>
+  <label for="prompt">Prompt for this key</label>
+  <textarea id="prompt" maxlength="4000" placeholder="Write the prompt this key should send"></textarea>
+  <p>Pressing this key sends the prompt to the visible Muse chat. An empty prompt sends nothing. An unsent draft in Muse blocks the action.</p>
+  <script>
+    const action = "com.davidedicillo.muse.send-prompt";
+    const field = document.getElementById("prompt");
+    let socket;
+    let context;
+    let timer;
+    window.connectElgatoStreamDeckSocket = (port, uuid, event, _info, actionInfo) => {
+      context = uuid;
+      const initial = JSON.parse(actionInfo);
+      field.value = initial.payload?.settings?.prompt ?? initial.settings?.prompt ?? "";
+      socket = new WebSocket(`ws://127.0.0.1:${port}`);
+      socket.onopen = () => {
+        socket.send(JSON.stringify({ event, uuid }));
+        socket.send(JSON.stringify({ event: "getSettings", action, context }));
+      };
+      socket.onmessage = ({ data }) => {
+        const message = JSON.parse(data);
+        if (message.event === "didReceiveSettings" && message.context === context && document.activeElement !== field) {
+          field.value = message.payload?.settings?.prompt ?? "";
+        }
+      };
+    };
+    field.addEventListener("input", () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        if (socket?.readyState === WebSocket.OPEN) {
+          socket.send(JSON.stringify({ event: "setSettings", action, context, payload: { prompt: field.value } }));
+        }
+      }, 250);
+    });
+  </script>
+</body>
+</html>

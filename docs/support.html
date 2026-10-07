@@ -1,0 +1,42 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><title>Support and Setup, Muse Controls</title><style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:#1B1429;color:#EDE6F5;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6}h1{color:#FFF0D8}h2{color:#FFF0D8;margin-top:1.6em}a{color:#B8A8F2}li{margin:.3em 0}code{background:#382B50;padding:1px 5px;border-radius:4px}</style></head><body><h1>Support and Setup Guide for Muse Controls</h1>
+
+<p>Publisher: David DiCillo. Muse Controls is an independent plugin for Meta Muse on macOS, and is not affiliated with Meta.</p>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>macOS 12 or later</li>
+<li>Stream Deck software 7.1 or later, with a keypad device</li>
+<li>Meta Muse for Mac, installed and signed in</li>
+<li>Accessibility access for Stream Deck (setup step 2 below)</li>
+</ul>
+
+<h2>Setup</h2>
+
+<p>1. Install Muse Controls from Elgato Marketplace, or double click the .streamDeckPlugin file.</p>
+<p>2. Allow Accessibility: Open System Settings, then Privacy and Security, then Accessibility, and turn on Stream Deck. Without this, keys will show an error instead of operating Muse.</p>
+<p>3. Drag actions onto keys: In Stream Deck, find Muse Controls in the action list and drag any of the five actions onto free keys.</p>
+<p>4. For Send Saved Prompt: Select that key in Stream Deck and type your text into the Prompt for this key field. Each key keeps its own prompt.</p>
+
+<h2>The five actions</h2>
+
+<ul>
+<li>Open Muse: Opens or focuses Muse and selects Main chat, even if a side chat was open.</li>
+<li>New Side Chat: Opens or focuses Muse and creates a new side chat, ready for input.</li>
+<li>Dictate: Press once to start dictation. If Muse is frontmost, dictation starts in the chat you are viewing. If another app is frontmost, it starts in Main chat. The key changes to Stop while recording. Press again to stop without sending.</li>
+<li>Finish and Send: Finishes an active dictation and sends it. When idle, it sends a draft already in the composer. An empty composer sends nothing.</li>
+<li>Send Saved Prompt: Sends the prompt saved on that key to the visible chat. If no prompt is set, it shows an error and sends nothing. If a draft is already in the composer, it shows an error and leaves the draft alone.</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+
+<ul>
+<li>A key shows an error: Check that Muse is installed, signed in, and that Stream Deck has Accessibility access. Then try Open Muse first so Muse is running.</li>
+<li>Dictate went to Main chat instead of my side chat: That is by design when Muse was not the frontmost app at the moment you pressed the key. Bring Muse to the front first to dictate in a side chat.</li>
+<li>Send Saved Prompt did nothing: Open that key in Stream Deck and confirm the Prompt for this key field is not empty, and that the composer in Muse has no unsent draft.</li>
+<li>A Muse update changed a control: The plugin operates Muse visible controls, so a Muse layout change can require a plugin update. Note what happened and report it through the support link on the Marketplace listing.</li>
+</ul>
+
+<h2>Privacy</h2>
+
+<p>The plugin collects no data. See PRIVACY.md for the full policy, including the brief clipboard use for saved prompts.</p></body></html>
