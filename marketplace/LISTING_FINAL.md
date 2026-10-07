@@ -29,11 +29,13 @@ Muse, Meta Muse, AI, chat, dictation, voice, prompt, productivity, macOS
 - Stream Deck software: 7.1 or later
 - Devices: Keypad controllers (Stream Deck, Stream Deck XL, and compatible key devices). No dial actions.
 
-## Additional links to enter (after Davide hosts the pages folder)
-- Support: SUPPORT.html (same content as SUPPORT.md)
-- Setup guide: SUPPORT.html, Setup section
-- Privacy policy: PRIVACY.html (same content as PRIVACY.md)
-Replace these filenames with the live URLs once hosted. A public GitHub repo for the source works, and the GitHub Issues page on that repo can serve as the support link.
+## Additional links to enter (live, verified 2026-10-07)
+- Support: https://github.com/davidedicillo/musedeck/blob/main/SUPPORT.md
+- Setup guide: https://github.com/davidedicillo/musedeck/blob/main/SUPPORT.md
+- Privacy policy: https://github.com/davidedicillo/musedeck/blob/main/PRIVACY.md
+- Website: https://github.com/davidedicillo/musedeck
+- Issues: https://github.com/davidedicillo/musedeck/issues
+Optional nicer URLs once GitHub Pages is enabled (Settings, Pages, Deploy from branch main, /docs folder): https://davidedicillo.github.io/musedeck/support.html and https://davidedicillo.github.io/musedeck/privacy.html
 
 ## Category
 Use the manifest category, Muse Controls. If Maker Console requires picking from its own list, choose Productivity.
