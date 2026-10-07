@@ -5,6 +5,9 @@ Paste each field as labelled. Character counts were checked on 2026-10-07.
 ## Product name (locked at creation, cannot be edited later in Maker Console)
 Muse Controls
 
+## Price (decided by Davide, 2026-10-07)
+Free. Select Free in Maker Console at product creation. Name and monetization lock at creation, so this choice is final unless Elgato support changes it.
+
 ## Short description (71 characters)
 Control Meta Muse chats, dictation, and saved prompts from Stream Deck.
 
