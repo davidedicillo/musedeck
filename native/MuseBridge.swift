@@ -173,7 +173,8 @@ private func clickComposerControl(in window: AXUIElement, kind: String) -> Bool 
 }
 
 private func recordingButton(in window: AXUIElement) -> AXUIElement? {
-    findButton(in: window, containing: "Stop dictation")
+    findButton(in: window, containing: "Stop recording") ??
+        findButton(in: window, containing: "Stop dictation")
 }
 
 private func waitForDictation(in window: AXUIElement, active: Bool) -> Bool {
@@ -190,7 +191,7 @@ private func stopDictation(in window: AXUIElement) -> Bool {
           let x = dimensions["x"], let y = dimensions["y"],
           let width = dimensions["width"], let height = dimensions["height"],
           width >= 300 && width <= 2000 && height >= 40 && height <= 120,
-          click(x: x + width / 2, y: y + height / 2) else { return false }
+          click(x: x + width - 64, y: y + height / 2) else { return false }
     return waitForDictation(in: window, active: false)
 }
 

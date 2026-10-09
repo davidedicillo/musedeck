@@ -2,7 +2,7 @@
 
 A local Stream Deck plugin for the installed Meta Muse Mac app (`com.meta.endo`). It uses Muse's visible Mac controls and the signed-in app. It does not use a Meta API key or read conversation history. This independent plugin is not affiliated with Meta.
 
-**Download:** [com.davidedicillo.muse.streamDeckPlugin](dist/com.davidedicillo.muse.streamDeckPlugin) (v0.4.0.0), then double-click to install.
+**Download:** [com.davidedicillo.muse.streamDeckPlugin](dist/com.davidedicillo.muse.streamDeckPlugin) (v0.4.1.0), then double-click to install.
 
 **Support:** [SUPPORT.md](SUPPORT.md) · **Privacy:** [PRIVACY.md](PRIVACY.md) · **Issues:** use the Issues tab on this repository.
 
@@ -17,6 +17,8 @@ Double-click `com.davidedicillo.muse.streamDeckPlugin` to install, or run `strea
 | Dictate | Press once to start recording; the key changes to a stop square. Press again to stop without sending. If Muse is already frontmost, a new recording starts in its visible chat. Otherwise it starts in Main chat. An active recording is stopped before any chat switch. |
 | Finish & Send | In the visible chat, finishes an active dictation using Muse's Send control and submits it. When idle, sends a nonempty draft already in the composer. An empty draft sends nothing. |
 | Send Saved Prompt | Sends the prompt configured for that one key to the visible chat. An empty prompt sends nothing. If Muse has an unsent draft, it shows an error and leaves the draft alone. |
+
+Successful actions rely on Muse's visible result or the Dictate key's recording state; they do not cover the key with a green checkmark. A yellow alert still appears when an action fails.
 
 For Send Saved Prompt, select its key in Stream Deck and enter text in the **Prompt for this key** field. Each key has independent settings. The helper verifies the inserted text before activating Send. Because Muse currently exposes its composer as one combined accessibility button, the helper locates its microphone and send controls by their positions within that button; a future Muse layout change may require updating `native/MuseBridge.swift`.
 

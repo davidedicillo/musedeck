@@ -1,4 +1,4 @@
-import { action, KeyDownEvent, SingletonAction, WillAppearEvent, WillDisappearEvent } from "@elgato/streamdeck";
+import streamDeck, { action, KeyDownEvent, SingletonAction, WillAppearEvent, WillDisappearEvent } from "@elgato/streamdeck";
 import { executeAction } from "../action-runner";
 import { runMuseCommand } from "../muse-bridge";
 
@@ -13,6 +13,7 @@ export class Dictate extends SingletonAction {
   override async onKeyDown(ev: KeyDownEvent): Promise<void> {
     const next = this.serial.then(async () => {
       const result = await executeAction("dictate", undefined, undefined, ev.action);
+      streamDeck.logger.info(`Muse Dictate: ${result.code}`);
       if (result.ok && result.code === "dictation-stopped") await this.setAllStates(0);
       else if (result.ok && result.code.startsWith("dictating-")) await this.setAllStates(1);
     });

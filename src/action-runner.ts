@@ -23,7 +23,6 @@ export async function executeAction(
     return { ok: false, code: "empty-prompt" };
   }
   const result = await invoke(commands[action], action === "send-prompt" ? prompt : undefined);
-  if (result.ok) await feedback.showOk();
-  else await feedback.showAlert();
+  if (!result.ok) await feedback.showAlert();
   return result;
 }

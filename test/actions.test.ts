@@ -3,7 +3,7 @@ import test from "node:test";
 import { executeAction } from "../src/action-runner.ts";
 import type { MuseCommand, MuseResult } from "../src/muse-bridge.ts";
 
-test("each key maps to its native command and shows success", async () => {
+test("each key maps to its native command without a success overlay", async () => {
   const seen: Array<[MuseCommand, string | undefined]> = [];
   let ok = 0;
   const invoke = async (command: MuseCommand, prompt?: string): Promise<MuseResult> => {
@@ -16,7 +16,7 @@ test("each key maps to its native command and shows success", async () => {
     });
   }
   assert.deepEqual(seen, [["open-main", undefined], ["new-side-chat", undefined], ["dictate", undefined], ["send-prompt", "  Hello Muse  "], ["finish-send", undefined]]);
-  assert.equal(ok, 5);
+  assert.equal(ok, 0);
 });
 
 test("blank prompt and native failure show an alert", async () => {
